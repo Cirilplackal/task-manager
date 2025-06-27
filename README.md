@@ -57,5 +57,7 @@ src/
 * **React Router**
 * `json-server`
 
+## ⚙️ Screenshot
+* ![Screenshot from 2025-06-27 14-10-39](https://github.com/user-attachments/assets/d6db4e8b-a1a8-4c1f-ad88-d926daae79cc)
 
 
