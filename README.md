@@ -1,12 +1,61 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🗂️ Task Manager
 
-Currently, two official plugins are available:
+A simple and elegant task management application built with **React + Vite**, using **Redux Toolkit**, **Axios**, and **Tailwind CSS**. Create, update, delete, and filter tasks visually with responsive cards and a smooth UX.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Getting Started
 
-## Expanding the ESLint configuration
+### 1. Clone the Repo
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+git clone https://github.com/Cirilplackal/task-manager.git
+cd task-manager
+````
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Start Mock API
+
+```bash
+npx json-server --watch db.json --port 3001
+```
+### 3. Start the App
+
+```bash
+npm run dev
+```
+
+Open `http://localhost:5173` in your browser.
+
+---
+
+## 🗃️ Folder Structure
+
+```bash
+src/
+├── api/               # Axios instance setup
+├── components/        # Reusable UI components (Card, CreateTask, etc.)
+├── constants/         # Default values
+├── features/    # Redux slice (CRUD logic)
+├── pages/Tasks.jsx    # Main UI with routing, filters
+├── App.jsx            # Routes + layout
+└── main.jsx           # ReactDOM entry
+```
+
+---
+
+## ⚙️ Technologies Used
+
+* **React** with **Vite**
+* **Redux Toolkit**
+* **Axios**
+* **Tailwind CSS**
+* **React Router**
+* `json-server`
+
+
+
