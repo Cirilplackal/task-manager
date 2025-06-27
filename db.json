@@ -9,14 +9,6 @@
       "updatedAt": "2025-06-27T08:15:22.000Z"
     },
     {
-      "id": "a202",
-      "title": "Publish weekly blog post",
-      "content": "Write and upload the article about microservices best practices.",
-      "completed": false,
-      "createdAt": "2025-06-26T09:30:00.000Z",
-      "updatedAt": null
-    },
-    {
       "id": "a203",
       "title": "Schedule design team retro",
       "content": "Set up a 45-min session to review the recent sprint and gather feedback.",
@@ -25,27 +17,27 @@
       "updatedAt": "2025-06-27T07:55:44.000Z"
     },
     {
-      "id": "a204",
-      "title": "Prepare product roadmap slides",
-      "content": "Summarize Q3 goals and align initiatives across departments.",
-      "completed": false,
-      "createdAt": "2025-06-22T11:45:00.000Z",
-      "updatedAt": "2025-06-27T07:50:13.000Z"
-    },
-    {
       "id": "a205",
       "title": "Respond to investor questions",
       "content": "Clarify recent churn data and share CAC/LTV insights with Q&A sheet.",
-      "completed": true,
+      "completed": false,
       "createdAt": "2025-06-23T17:20:00.000Z",
-      "updatedAt": "2025-06-27T07:41:09.000Z"
+      "updatedAt": "2025-06-27T08:26:17.321Z"
     },
     {
       "id": "a206",
       "title": "Audit staging environments",
       "content": "Ensure all test credentials are removed and logs are rotating correctly.",
-      "completed": false,
+      "completed": true,
       "createdAt": "2025-06-26T12:10:00.000Z",
+      "updatedAt": "2025-06-27T08:26:14.848Z"
+    },
+    {
+      "id": "4277",
+      "title": "wwwww",
+      "content": "wwqwqw",
+      "completed": false,
+      "createdAt": "2025-06-27T08:25:02.084Z",
       "updatedAt": null
     }
   ]
