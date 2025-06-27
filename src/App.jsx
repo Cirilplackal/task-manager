@@ -1,11 +1,15 @@
-import React from "react";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Tasks from "./pages/Tasks";
 
-const App = () => {
-  return <h1 className="text-3xl font-bold underline">Task Manager
-  
-  <Tasks />
-  </h1>;
-};
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Navigate to="/tasks" replace />} />
+        <Route path="/tasks" element={<Tasks />} />
+      </Routes>
+    </Router>
+  );
+}
 
 export default App;
