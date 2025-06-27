@@ -4,22 +4,38 @@ import { fetchPosts, deletePost } from "../features/postSlice";
 import Card from "../components/Card";
 import CreateTask from "../components/CreateTask";
 import CardLoader from "../components/CardLoader";
-import { DEFAULT_CARDS } from "../constants/constants";
+import { BASE_FILTER_OPTIONS, DEFAULT_CARDS } from "../constants/constants";
+import { getFilterOptions } from "../utils/functions";
+import { useSearchParams } from "react-router-dom";
+import Filters from "../components/Filter";
 
 export default function Tasks() {
   const dispatch = useDispatch();
   const { posts, loading } = useSelector((state) => state.posts);
 
+  const [searchParams, setSearchParams] = useSearchParams();
+  const filter = searchParams.get("status") || "all";
+
   useEffect(() => {
     dispatch(fetchPosts());
   }, [dispatch]);
+
+  const handleFilterClick = (status) => {
+    setSearchParams({ status: status });
+  };
+
+  const filteredPosts = posts.filter((post) => {
+    if (filter === "completed") return post.completed;
+    if (filter === "pending") return !post.completed;
+    return true;
+  });
 
   const stats = {
     completed: posts.filter((t) => t.completed).length,
     pending: posts.filter((t) => !t.completed).length,
     total: posts.length,
   };
-
+  const filterOptions = getFilterOptions(BASE_FILTER_OPTIONS, stats, filter);
   return (
     <div>
       <div className="bg-white shadow-sm border-b border-gray-200">
@@ -31,7 +47,13 @@ export default function Tasks() {
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Organize your work and life, finally. Become focused, organized,
               and calm with this task management system.
-            </p>
+            </p>{" "}
+            {/* Filter Buttons */}
+            <Filters
+              options={filterOptions}
+              active={filter}
+              onFilterChange={handleFilterClick}
+            />
           </div>
         </div>
       </div>
@@ -44,7 +66,7 @@ export default function Tasks() {
             ? Array.from({ length: posts?.length || DEFAULT_CARDS }).map(
                 (_, index) => <CardLoader key={index} />
               )
-            : posts.map((post) => (
+            : filteredPosts.map((post) => (
                 <Card
                   key={post.id}
                   post={post}
